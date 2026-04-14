@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="estilo.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap"
+            rel="stylesheet">
+</head>
+
+<body>
+    
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    
+    <label for="menu-toggle" class="hamburguesa" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+    
+    <header>
+        <div class="logo">Portfolio</div>
+        <nav class="nav-desktop">
+            <a href="proyectos/index.html">Proyectos</a>
+            <a href="sobremi/index.html">Sobre mí</a>
+            <a href="contacto/index.html">Contacto</a>
+        </nav>
+    </header>
+    
+    <div class="overlay">
+        <label for="menu-toggle" class="cerrar-overlay"></label>
+        <nav>
+            <a href="proyectos/index.html">Proyectos</a>
+            <a href="sobremi/index.html">Sobre mí</a>
+            <a href="contacto/index.html">Contacto</a>
+        </nav>
+    </div>
+
+    <main>
+            <div class="galeria">
+                <div class="texto-central">
+                    Welcome to my world...
+                </div>
+        
+                <div id="grid-imagenes" class="grid-contenedor">
+                </div>
+            </div>
+    </main>
+   
+
+    <footer>
+        <div class="Infofooter">
+            <a class="correo" href="mailto:monicaaferreiro@gmail.com">monicaaferreiro@gmail.com</a>
+            <div class="iconos-sociales">
+                <a href="https://www.instagram.com/by.monicaferreiro" target="_blank">
+                    <img src="assets/iconos sociales/iconoig.svg" alt="Instagram">
+                </a>
+                <a href="https://www.linkedin.com/in/monicaa-ferreiro/" target="_blank">
+                    <img src="assets/iconos sociales/iconolinkedin.svg" alt="LinkedIn">
+                </a>
+            </div>
+        </div>
+        <div class="copyright">
+            © Mónica Ferreiro
+        </div>
+    </footer>
+
+    <script>
+    // Script para cargar imágenes dinámicamente en el grid
+            document.addEventListener("DOMContentLoaded", function () {
+                const contenedorGrid = document.getElementById('grid-imagenes');
+                const totalImagenes = 50; // 10 columnas x 5 filas
+
+                for (let i = 1; i <= totalImagenes; i++) {
+                    // Creamos el elemento <img>
+                    const img = document.createElement('img');
+
+                    // Asignamos la URL de Picsum con el número actual (i)
+                    // Usamos una resolución de 400x400 para que cargue rápido
+                    img.src = `https://picsum.photos/400/400?random=${i}`;
+                    img.alt = `Imagen de galería ${i}`; 
+
+                    // Insertamos la imagen en el contenedor del grid
+                    contenedorGrid.appendChild(img);
+                }
+            });
+    </script>
+</body>
+
+</html>
